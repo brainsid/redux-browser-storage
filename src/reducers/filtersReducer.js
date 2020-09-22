@@ -1,4 +1,5 @@
 const initialState = {
+  filters: {},
   // id: [filter1, filter2],
   // 1: [filter3, filter4]
 };
@@ -8,7 +9,10 @@ export default function (state = initialState, action) {
     case "ADD_FILTER":
       return {
         ...state,
-        [action.payload]: [...state[action.payload], "filter"],
+        filters: {
+          ...state.filters,
+          [action.payload]: [...state.filters[action.payload], "filter"],
+        },
       };
     case "DEL_FILTER":
       console.log("remove filter");
