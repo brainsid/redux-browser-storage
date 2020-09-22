@@ -1,4 +1,5 @@
 const initialState = {
+  100: ["test", "test"],
   // id: [filter1, filter2],
   // 1: [filter3, filter4]
 };
@@ -6,7 +7,6 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case "ADD_FILTER":
-      console.log("add filter");
       return {
         ...state,
         [action.payload]: [...state[action.payload], "filter"],
