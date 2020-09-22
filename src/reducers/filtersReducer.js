@@ -1,5 +1,4 @@
 const initialState = {
-  100: ["test", "test"],
   // id: [filter1, filter2],
   // 1: [filter3, filter4]
 };
