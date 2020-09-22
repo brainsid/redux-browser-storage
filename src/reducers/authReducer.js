@@ -1,6 +1,4 @@
-const initialState = {
-  user: {},
-};
+const initialState = {};
 
 export default function (state = initialState, action) {
   switch (action.type) {
@@ -9,7 +7,7 @@ export default function (state = initialState, action) {
         console.log("adding new id to state");
         return {
           ...state,
-          user: action.payload,
+          ...action.payload,
         };
       }
       return state;
