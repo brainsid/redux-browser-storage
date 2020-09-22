@@ -29,7 +29,7 @@ const Filters = ({ filters, user, addFilter, delFilter, logout }) => {
 };
 
 const mapStateToProps = (state) => ({
-  filters: state.filter,
+  filters: state.filter.filters,
   user: state.user.user,
 });
 
