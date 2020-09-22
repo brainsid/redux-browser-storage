@@ -1,17 +1,9 @@
-import { ADD_FILTER } from "./types";
-import users from "./users.json";
+import { ADD_FILTER, DEL_FILTER } from "./types";
 
-export const addFilter = () => (dispatch) => {
-  dispatch({ type: ADD_FILTER });
+export const addFilter = (userId) => (dispatch) => {
+  dispatch({ type: ADD_FILTER, payload: userId });
 };
 
-export const login = (userObj) => (dispatch) => {
-  console.log("Login action!!");
-  console.log(users);
-  const user = users.filter(
-    (user) =>
-      userObj.username === user.username && userObj.password === user.password
-  )[0];
-  console.log(user);
-  user && dispatch({ type: "LOGIN", payload: user.id });
+export const delFilter = (userId) => (dispatch) => {
+  dispatch({ type: DEL_FILTER, payload: userId });
 };

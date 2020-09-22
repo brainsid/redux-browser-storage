@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { login } from "../actions/filterActions";
+import { login } from "../actions/authActions";
+import { withRouter } from "react-router-dom";
 
 class Login extends Component {
   state = {
     username: "",
     password: "",
+  };
+
+  handleClick = () => {
+    const user = this.props.login(this.state);
+    user && this.props.history.push("/dashboard");
   };
 
   render() {
@@ -23,7 +29,7 @@ class Login extends Component {
           onChange={(e) => this.setState({ [e.target.name]: e.target.value })}
           type="password"
         />
-        <button onClick={() => this.props.login(this.state)}>Login</button>
+        <button onClick={this.handleClick}>Login</button>
       </div>
     );
   }
@@ -33,4 +39,4 @@ const mapDispathcToProps = {
   login,
 };
 
-export default connect(null, mapDispathcToProps)(Login);
+export default connect(null, mapDispathcToProps)(withRouter(Login));

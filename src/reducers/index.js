@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import filtersReducer from "./filtersReducer";
+import authReducer from "./authReducer";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // Uses browser window local storage
 
@@ -12,6 +13,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   filter: filtersReducer,
+  user: authReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer); // wrap-up our reducer with persist capabilities
