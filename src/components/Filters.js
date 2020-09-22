@@ -30,7 +30,7 @@ const Filters = ({ filters, user, addFilter, delFilter, logout }) => {
 
 const mapStateToProps = (state) => ({
   filters: state.filter,
-  user: state.user,
+  user: state.user.user,
 });
 
 const mapDispathcToProps = {

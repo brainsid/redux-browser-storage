@@ -1,4 +1,6 @@
-const initialState = {};
+const initialState = {
+  user: {},
+};
 
 export default function (state = initialState, action) {
   switch (action.type) {
@@ -12,7 +14,10 @@ export default function (state = initialState, action) {
       }
       return state;
     case "LOGOUT":
-      return initialState;
+      return {
+        ...state,
+        user: {},
+      };
 
     default:
       return state;
