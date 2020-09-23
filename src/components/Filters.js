@@ -18,7 +18,11 @@ const Filters = ({ filters, user, addFilter, delFilter, logout }) => {
       <button onClick={() => handleLogout()}>Logout</button>
       <h1>Your filters:</h1>
       <ul>
+<<<<<<< HEAD
         {user.id &&
+=======
+        {filters &&
+>>>>>>> Auth
           filters[user.id] &&
           filters[user.id].map((filter) => <li>{filter}</li>)}
       </ul>

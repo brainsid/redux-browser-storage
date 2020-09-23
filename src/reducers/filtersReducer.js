@@ -15,7 +15,6 @@ export default function (state = initialState, action) {
         },
       };
     case "DEL_FILTER":
-      console.log("remove filter");
       return {
         ...state,
         [action.payload]: state[action.payload].slice(
@@ -23,7 +22,12 @@ export default function (state = initialState, action) {
           state[action.payload].length - 1
         ),
       };
-
+    case "CLEAR_FILTERS":
+      const userId = action.payload;
+      return {
+        ...state,
+        [userId]: [],
+      };
     default:
       return state;
   }
