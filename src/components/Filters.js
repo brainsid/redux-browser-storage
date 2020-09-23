@@ -17,7 +17,11 @@ const Filters = ({ filters, user, addFilter, delFilter, logout }) => {
       <h1>Hello {user.username && user.username.toUpperCase()}!</h1>
       <button onClick={() => handleLogout()}>Logout</button>
       <h1>Your filters:</h1>
-      <ul>{filters && filters[user.id].map((filter) => <li>{filter}</li>)}</ul>
+      <ul>
+        {filters &&
+          filters[user.id] &&
+          filters[user.id].map((filter) => <li>{filter}</li>)}
+      </ul>
       <button onClick={() => addFilter(user.id)}>Add Filter</button>
       <button onClick={() => delFilter(user.id)}>Remove Filter</button>
     </div>
