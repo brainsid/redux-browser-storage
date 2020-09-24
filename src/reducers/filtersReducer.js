@@ -8,7 +8,9 @@ export default function (state = initialState, action) {
     case "ADD_FILTER":
       return {
         ...state,
-        [action.payload]: [...state[action.payload], "filter"],
+        [action.payload]: state[action.payload]
+          ? [...state[action.payload], "filter"]
+          : ["filter"],
       };
     case "DEL_FILTER":
       return {
